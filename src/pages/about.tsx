@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';
-import Link from 'next/link';
+import type { NextPage } from 'next'
+import Link from 'next/link'
 
 const About: NextPage = () => {
 	return (
@@ -9,7 +9,7 @@ const About: NextPage = () => {
 				<Link href='/'>Index</Link>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default About;
+export default About

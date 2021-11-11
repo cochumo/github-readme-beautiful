@@ -7,4 +7,4 @@ module.exports = {
 		'no-console': 'warn',
 		'no-var': 'error',
 	},
-};
+}
