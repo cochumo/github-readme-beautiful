@@ -13,6 +13,9 @@ const Profile = (
 	}
 	return `
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="846" height="423" viewBox="0 0 846 423">
+			<style>
+				@import url('https://fonts.googleapis.com/css?family=Poppins');
+			</style>
 			<defs>
 				<clipPath id="clip-card">
 					<rect width="846" height="423"/>
