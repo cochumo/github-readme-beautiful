@@ -63,7 +63,7 @@ const Profile = (
 			</defs>
 			<g id="card" clip-path="url(#clip-card)">
 				<rect width="564" height="336" fill="rgba(46,52,64,0)"/>
-				<rect id="rectangle_2" data-name="rectangle 2" width="564" height="336" rx="10" fill="#282d38"/>
+				<rect id="rectangle_2" data-name="rectangle 2" width="564" height="336" rx="10" fill="#1d2228"/>
 				<g id="group_5" data-name="group 5" transform="translate(-1.5 1)">
 					<g id="group_2" data-name="group 2" transform="translate(11.5 11)">
 						<path id="path_1" data-name="path 1" d="M0,.758,521,0V287.971H0Z" transform="translate(11.5 12)" fill="#242e37"/>
