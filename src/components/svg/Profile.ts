@@ -35,12 +35,13 @@ const Profile = (
 						opacity: 0;
 						transform: translateY(20%);
 					}
-					5%, 80% {
+					5%, 90% {
 						opacity: 1;
 						transform: translateY(0);
 					}
-					98%, 100% {
+					95%, 100% {
 						opacity: 0;
+						transform: translateY(-5%);
 					}
 				}
 				@keyframes dropIn {
