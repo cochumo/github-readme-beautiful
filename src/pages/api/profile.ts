@@ -14,5 +14,9 @@ export default function handler(
 	type = Array.isArray(type) ? type[0] : type
 	birthDate = Array.isArray(birthDate) ? birthDate[0] : birthDate
 	res.setHeader('Content-Type', 'image/svg+xml')
+	res.setHeader(
+		'Cache-Control',
+		'public, immutable, no-transform, s-maxage=31536000, max-age=31536000'
+	)
 	res.status(200).send(Profile(name, age, local, type, birthDate))
 }
