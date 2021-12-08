@@ -33,11 +33,11 @@ const Profile = (
 					}
 
 					@keyframes fadeInUp {
-						0% {
+						0%, 5% {
 							opacity: 0;
 							transform: translateY(20%);
 						}
-						5%, 90% {
+						10%, 90% {
 							opacity: 1;
 							transform: translateY(0);
 						}
@@ -47,10 +47,10 @@ const Profile = (
 						}
 					}
 					@keyframes dropIn {
-						5% {
+						10% {
 							opacity: 0;
 						}
-						15%, 80% {
+						20%, 80% {
 							opacity: 1;
 						}
 						85%, 100% {
