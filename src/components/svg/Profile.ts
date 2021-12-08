@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import { fadeInUp, dropIn } from '../../utils/common/animate'
 
 const Profile = (
 	name: string = 'unknow',
@@ -32,31 +33,8 @@ const Profile = (
 						animation-iteration-count: infinite;
 					}
 
-					@keyframes fadeInUp {
-						0%, 5% {
-							opacity: 0;
-							transform: translateY(20%);
-						}
-						10%, 90% {
-							opacity: 1;
-							transform: translateY(0);
-						}
-						95%, 100% {
-							opacity: 0;
-							transform: translateY(-5%);
-						}
-					}
-					@keyframes dropIn {
-						10% {
-							opacity: 0;
-						}
-						20%, 80% {
-							opacity: 1;
-						}
-						85%, 100% {
-							opacity: 0;
-						}
-					}
+					${fadeInUp()}
+					${dropIn()}
 				</style>
 			</defs>
 			<defs>
