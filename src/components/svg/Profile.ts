@@ -13,49 +13,52 @@ const Profile = (
 	}
 	return `
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="564" height="336" viewBox="0 0 564 336">
-			<style>
-				@import url('https://fonts.googleapis.com/css?family=Poppins');
-				.text {
-					opacity: 0;
-					animation: dropIn 30s;
-					animation-timing-function: ease;
-					animation-fill-mode: forwards;
-					animation-delay: calc(var(--order) * 200ms);
-					animation-iteration-count: infinite;
-				}
-				#group_5 {
-					animation: fadeInUp 30s;
-					animation-timing-function: ease;
-					animation-fill-mode: forwards;
-					animation-iteration-count: infinite;
-				}
+			<defs>
+				<style>
+					.text {
+						font-size: 18px;
+						font-family: 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+						opacity: 0;
+						animation: dropIn 30s;
+						animation-timing-function: ease;
+						animation-fill-mode: forwards;
+						animation-delay: calc(var(--order) * 200ms);
+						animation-iteration-count: infinite;
+					}
+					#group_5 {
+						animation: fadeInUp 30s;
+						animation-timing-function: ease;
+						animation-fill-mode: forwards;
+						animation-iteration-count: infinite;
+					}
 
-				@keyframes fadeInUp {
-					0% {
-						opacity: 0;
-						transform: translateY(20%);
+					@keyframes fadeInUp {
+						0% {
+							opacity: 0;
+							transform: translateY(20%);
+						}
+						5%, 90% {
+							opacity: 1;
+							transform: translateY(0);
+						}
+						95%, 100% {
+							opacity: 0;
+							transform: translateY(-5%);
+						}
 					}
-					5%, 90% {
-						opacity: 1;
-						transform: translateY(0);
+					@keyframes dropIn {
+						5% {
+							opacity: 0;
+						}
+						15%, 80% {
+							opacity: 1;
+						}
+						85%, 100% {
+							opacity: 0;
+						}
 					}
-					95%, 100% {
-						opacity: 0;
-						transform: translateY(-5%);
-					}
-				}
-				@keyframes dropIn {
-					5% {
-						opacity: 0;
-					}
-					15%, 80% {
-						opacity: 1;
-					}
-					85%, 100% {
-						opacity: 0;
-					}
-				}
-			</style>
+				</style>
+			</defs>
 			<defs>
 				<clipPath id="clip-card">
 					<rect width="564" height="336"/>
@@ -84,16 +87,16 @@ const Profile = (
 						</g>
 					</g>
 				</g>
-				<text id="NameText" class="text" style="--order: 1" transform="translate(262 113)" fill="#bfbfbf" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">${name}</tspan></text>
-				<text id="AgeText" class="text" style="--order: 2" transform="translate(262 154)" fill="#bfbfbf" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">${age}</tspan></text>
-				<text id="LocalText" class="text" style="--order: 3" transform="translate(262 195)" fill="#bfbfbf" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">${
+				<text id="NameText" class="text" style="--order: 1" transform="translate(262 113)" fill="#bfbfbf" font-weight="500"><tspan x="0" y="0">${name}</tspan></text>
+				<text id="AgeText" class="text" style="--order: 2" transform="translate(262 154)" fill="#bfbfbf" font-weight="500"><tspan x="0" y="0">${age}</tspan></text>
+				<text id="LocalText" class="text" style="--order: 3" transform="translate(262 195)" fill="#bfbfbf" font-weight="500"><tspan x="0" y="0">${
 					local[0].toUpperCase() + local.slice(1)
 				}</tspan></text>
-				<text id="TypeText" class="text" style="--order: 4" transform="translate(261 236)" fill="#bfbfbf" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">${type}</tspan></text>
-				<text id="Name" class="text" style="--order: 1" transform="translate(127 113)" fill="#83a5c0" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">Name</tspan></text>
-				<text id="Age" class="text" style="--order: 2" transform="translate(127 154)" fill="#83a5c0" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">Age</tspan></text>
-				<text id="Local" class="text" style="--order: 3" transform="translate(127 195)" fill="#83a5c0" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">Local</tspan></text>
-				<text id="Type" class="text" style="--order: 4" transform="translate(127 236)" fill="#83a5c0" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">Type</tspan></text>
+				<text id="TypeText" class="text" style="--order: 4" transform="translate(261 236)" fill="#bfbfbf" font-weight="500"><tspan x="0" y="0">${type}</tspan></text>
+				<text id="Name" class="text" style="--order: 1" transform="translate(127 113)" fill="#83a5c0" font-weight="500"><tspan x="0" y="0">Name</tspan></text>
+				<text id="Age" class="text" style="--order: 2" transform="translate(127 154)" fill="#83a5c0" font-weight="500"><tspan x="0" y="0">Age</tspan></text>
+				<text id="Local" class="text" style="--order: 3" transform="translate(127 195)" fill="#83a5c0" font-weight="500"><tspan x="0" y="0">Local</tspan></text>
+				<text id="Type" class="text" style="--order: 4" transform="translate(127 236)" fill="#83a5c0" font-weight="500"><tspan x="0" y="0">Type</tspan></text>
 			</g>
 		</svg>
 	`
