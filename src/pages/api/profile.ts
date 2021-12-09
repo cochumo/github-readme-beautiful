@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Profile from '../../components/svg/Profile'
+import { getValueFirstArray } from '../../utils/common/util'
 
 export default function handler(
 	req: NextApiRequest,
@@ -8,11 +9,11 @@ export default function handler(
 	let {
 		query: { name, age, local, type, birthDate },
 	} = req
-	name = Array.isArray(name) ? name[0] : name
-	age = Array.isArray(age) ? age[0] : age
-	local = Array.isArray(local) ? local[0] : local
-	type = Array.isArray(type) ? type[0] : type
-	birthDate = Array.isArray(birthDate) ? birthDate[0] : birthDate
+	name = getValueFirstArray(name)
+	age = getValueFirstArray(age)
+	local = getValueFirstArray(local)
+	type = getValueFirstArray(type)
+	birthDate = getValueFirstArray(birthDate)
 	res.setHeader('Content-Type', 'image/svg+xml')
 	res.setHeader(
 		'Cache-Control',
