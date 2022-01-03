@@ -22,7 +22,7 @@ function Copyright() {
 			{'Copyright © '}
 			<Link
 				color='inherit'
-				href='https://github-readme-beautiful-cjzzcmda9-cochumo.vercel.app/'
+				href='https://github.com/cochumo/github-readme-beautiful'
 			>
 				Github Readme Beautiful
 			</Link>{' '}
