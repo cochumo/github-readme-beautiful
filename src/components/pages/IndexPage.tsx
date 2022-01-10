@@ -30,12 +30,15 @@ const appName = 'Github Readme Beautiful'
 
 const theme = createTheme()
 
-const sampleQuery = 'profile?name=sample-taro&age=31&local=japan&type=engineer'
+const sampleQuery =
+	'profile?name=github-readme-beautiful&age=31&local=japan&type=engineer'
 
 const sampleCode: string = `// {your github username}/README.md
 <a>
   <img align="center" src="https://github-readme-beautiful.vercel.app/api/${sampleQuery}" />
-</a>`
+</a>
+or
+[![github-readme-stats](https://github-readme-beautiful.vercel.app/api/${sampleQuery})](https://github-readme-beautiful.vercel.app)`
 
 export default function Index() {
 	return (
