@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import gql from 'graphql-tag'
 import { client } from '../../utils/urql'
 import Github from '../../components/svg/Github'
 import { getValueFirstArray } from '../../utils/common/helper'
@@ -12,10 +13,42 @@ export default async function handler(
 	} = req
 	name = getValueFirstArray(name)
 
-	const LoginQuery = `
+	const LoginQuery = gql`
 		query {
-			viewer {
+			user(login: "${name}") {
+				id
+				avatarUrl
 				login
+				repositoriesContributedTo(
+					first: 1
+					contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]
+				) {
+					totalCount
+				}
+				pullRequests(first: 1) {
+					totalCount
+				}
+				openIssues: issues(states: OPEN) {
+					totalCount
+				}
+				closedIssues: issues(states: CLOSED) {
+					totalCount
+				}
+				followers {
+					totalCount
+				}
+				repositories(
+					first: 100
+					ownerAffiliations: OWNER
+					orderBy: { direction: DESC, field: STARGAZERS }
+				) {
+					totalCount
+					nodes {
+						stargazers {
+							totalCount
+						}
+					}
+				}
 			}
 		}
 	`
