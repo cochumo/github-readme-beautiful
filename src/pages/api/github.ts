@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { createClient, Provider, useQuery } from 'urql'
+import { client } from '../../utils/urql'
 import Github from '../../components/svg/Github'
 import { getValueFirstArray } from '../../utils/common/helper'
 
@@ -19,16 +19,6 @@ export default async function handler(
 			}
 		}
 	`
-
-	const client = createClient({
-		url: 'https://api.github.com/graphql',
-		fetchOptions: () => {
-			const token = process.env.GITHUB_TOKEN
-			return {
-				headers: { authorization: token ? `Bearer ${token}` : '' },
-			}
-		},
-	})
 
 	const { data, error } = await client.query(LoginQuery).toPromise()
 	console.log(data)
