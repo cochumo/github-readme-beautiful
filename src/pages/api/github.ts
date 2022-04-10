@@ -13,7 +13,7 @@ export default async function handler(
 	} = req
 	name = getValueFirstArray(name)
 
-	const LoginQuery = gql`
+	const UserQuery = gql`
 		query {
 			user(login: "${name}") {
 				id
@@ -53,7 +53,7 @@ export default async function handler(
 		}
 	`
 
-	const { data, error } = await client.query(LoginQuery).toPromise()
+	const { data, error } = await client.query(UserQuery).toPromise()
 	console.log(data)
 
 	res.setHeader('Content-Type', 'image/svg+xml')
