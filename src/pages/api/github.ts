@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { createClient, Provider, useQuery } from 'urql'
 import Github from '../../components/svg/Github'
-import { getValueFirstArray } from '../../utils/common/util'
+import { getValueFirstArray } from '../../utils/common/helper'
 
 export default async function handler(
 	req: NextApiRequest,

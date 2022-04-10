@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Profile from '../../components/svg/Profile'
-import { getValueFirstArray } from '../../utils/common/util'
+import { getValueFirstArray } from '../../utils/common/helper'
 
 export default function handler(
 	req: NextApiRequest,
